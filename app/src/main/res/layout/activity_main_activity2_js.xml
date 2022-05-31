@@ -7,12 +7,50 @@
     tools:context=".MainActivity2J_S">
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextIngresoNumeroj_s"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="16dp"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="Ingrese numero"
         android:inputType="number"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="35dp" />
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonIngreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="164dp"
+        android:onClick="onClickIngresoNumero"
+        android:text="Ingresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextIngresoNumeroj_s" />
+
+    <Button
+        android:id="@+id/buttonCerrar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="175dp"
+        android:text="Cerrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonIngreso" />
+
+    <ListView
+        android:id="@+id/ListViewIngresoNumeros2"
+        android:layout_width="316dp"
+        android:layout_height="393dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
