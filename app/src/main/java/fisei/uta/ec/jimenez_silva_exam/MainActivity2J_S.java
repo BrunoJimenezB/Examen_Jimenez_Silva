@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,10 @@ public int i;
         listViewnumero.setAdapter(adapter);
         valores[i]= Integer.valueOf(editTextnumero.getText().toString());
         i=i+1;
-
+       if(i==4){
+           Toast.makeText(this, "No ingresar mas datos", Toast.LENGTH_SHORT).show();
+           i=0;
+       }
     //    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
 
         //Asociar el adapter con la lista que a mostrar los datos
