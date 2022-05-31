@@ -34,6 +34,18 @@ private ListView ListViewCargarDatos;
         Intent intent = new Intent(MainActivity.this, MainActivity2J_S.class);
         startActivity(intent);
     }
+public int[] ordenarTranposicion(int []vector){
+        for (int i =0; i<vector.length; i++){
+            for (int j=0; j<vector.length; j++){
+                if(vector[i]>vector[j]){
+                    int temp= vector[j];
+                    vector[j]=vector[i];
+                    vector[i]=temp;
+                }
+            }
+        }
+        return vector;
+}
 
 
 }
