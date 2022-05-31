@@ -25,17 +25,24 @@ private ListView listViewnumero;
         buttonCerrar= findViewById(R.id.buttonCerrar2);
         editTextnumero=findViewById(R.id.editTextIngresoNumeroj_s);
         listViewnumero= findViewById(R.id.ListViewIngresoNumeros2);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
-
+       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
+       // listViewnumero.setAdapter(adapter);
         //Asociar el adapter con la lista que a mostrar los datos
-        listViewnumero.setAdapter(adapter);
+       // listViewnumero.setAdapter(adapter);
     }
     public void onClickIngresoNumero(View view){
+        List<String> list = new ArrayList<String>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
+        String item = editTextnumero.getText().toString();
+        list.add(item);
+        listViewnumero.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, list));
+    //    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
 
         //Asociar el adapter con la lista que a mostrar los datos
-        listViewnumero.setAdapter(adapter);
+
+       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
+        //Asociar el adapter con la lista que a mostrar los datos
+
     }
 //    private List<String> cargarDatosListView(){
 //        List<String> list = new ArrayList<String>();
@@ -49,10 +56,10 @@ private ListView listViewnumero;
 //    }
 private List<String> cargarDatosListView(){
     List<String> list = new ArrayList<String>();
-    for (int i=1 ; i<=20; i++){
-        String item = "Numero: " + i;
+
+        String item = editTextnumero.getText().toString();
         list.add(item);
-    }
+
 
 
     return list;
