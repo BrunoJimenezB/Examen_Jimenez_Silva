@@ -34,6 +34,6 @@ private ListView ListViewCargarDatos;
         Intent intent = new Intent(MainActivity.this, MainActivity2J_S.class);
         startActivity(intent);
     }
-    
+
 
 }
