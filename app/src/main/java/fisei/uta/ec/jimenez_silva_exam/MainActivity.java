@@ -14,6 +14,7 @@ private Button buttonSiguiente;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonSiguiente= findViewById(R.id.buttonSiguiente1);
+        
     }
     public void onClickSiguiente(View view){
         Intent intent = new Intent(MainActivity.this, MainActivity2J_S.class);

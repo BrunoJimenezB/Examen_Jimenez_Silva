@@ -2,8 +2,10 @@ package fisei.uta.ec.jimenez_silva_exam;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +19,10 @@ private Button buttonIngresar;
 private Button  buttonCerrar;
 private EditText editTextnumero;
 private ListView listViewnumero;
+private  ArrayAdapter<String> adapter;
+private int contador;
+private int [] valores;
+public int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,17 +31,20 @@ private ListView listViewnumero;
         buttonCerrar= findViewById(R.id.buttonCerrar2);
         editTextnumero=findViewById(R.id.editTextIngresoNumeroj_s);
         listViewnumero= findViewById(R.id.ListViewIngresoNumeros2);
-       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1 );
+        valores= new int[4];
        // listViewnumero.setAdapter(adapter);
         //Asociar el adapter con la lista que a mostrar los datos
        // listViewnumero.setAdapter(adapter);
     }
     public void onClickIngresoNumero(View view){
-        List<String> list = new ArrayList<String>();
 
-        String item = editTextnumero.getText().toString();
-        list.add(item);
-        listViewnumero.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, list));
+
+        adapter.add(editTextnumero.getText().toString());
+        listViewnumero.setAdapter(adapter);
+        valores[i]= Integer.valueOf(editTextnumero.getText().toString());
+        i=i+1;
+
     //    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, cargarDatosListView());
 
         //Asociar el adapter con la lista que a mostrar los datos
@@ -52,17 +61,12 @@ private ListView listViewnumero;
 //
 //
 //
-//        return list;
-//    }
-private List<String> cargarDatosListView(){
-    List<String> list = new ArrayList<String>();
+public void onClickPasar(View view){
+        Intent intent= new Intent(this, MainActivity.class);
+      intent.putExtra("valores", valores);
 
-        String item = editTextnumero.getText().toString();
-        list.add(item);
-
-
-
-    return list;
+        startActivity(intent);
 }
+
 
 }
